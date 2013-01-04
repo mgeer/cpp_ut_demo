@@ -1,0 +1,13 @@
+todo:
+1. when delete result??
+
+
+1. do not close reader after reading, call reader::close explictly.
+2. result collector treat tail of last result as one line.
+
+bottleneck:
+1. word cutter
+
+done:
+3. remove vector<char> based api on mapper.
+4. refactor map and reduce logic.

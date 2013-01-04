@@ -1,0 +1,4 @@
+todo:
+1. delete result after merging in collector to release resource as early as
+possible.
+2. replace make with COMAKE

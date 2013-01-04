@@ -1,0 +1,45 @@
+======how to run it======
+1. run 'make ut' in the root folder.
+2. go to output/ut, run './ut'
+3. for more detail, please go to ut/src/job_client_test.cpp.
+
+
+
+======instruction======
+JobClient
+    Job
+    Hammal
+    BlockQueue
+    Worker
+        Result
+        Task
+            Mapper
+    ResultCollector
+        ResultMerger
+SimpleWordMapper
+
+======requirements======
+    there is one large file (ex. 11G bytes) composed of lines, words in each line are seperated by tab('\t'). we need to find out the 8th wowrd and seperate it by blank into Terms. if the word does not contains blank char, it should be basic word also.
+
+    given: "1\t2\t3\t4\t5\t6\t7\t8\thello world\t bla bla"
+    then: 
+        terms: "hello", "world"
+        basic words: (NULL)
+
+    given  "1\t2\t3\t4\t5\t6\t7\t8\tbasic\t bla bla"
+    then:
+        terms: "basic"
+        basic words: "basic"
+
+    as a result, we need to stat the frequence for each term/basicword.
+
+    given there are 2 lines in the file:
+        "1\t2\t3\t4\t5\t6\t7\t8\thello world\t bla bla"
+        "1\t2\t3\t4\t5\t6\t7\t8\tbasic\t bla bla"
+    then the stat result should be:
+    terms:
+        "hello(1/3)","world(1/3)","basic(1/3):
+    basic words:
+        "basic(1/3)"
+
+
